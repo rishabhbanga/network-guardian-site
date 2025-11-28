@@ -4,30 +4,29 @@
   <meta charset="UTF-8" />
   <title>Network Guardian – Wi-Fi Trust Score</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Network Guardian introduces the world's first Wi-Fi Trust Score — real-time security, stability, and community reputation for any network."
-  />
 
-  <!-- SAHA Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Space+Mono&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Force logo sizing (overrides GitHub theme defaults) -->
   <style>
-  .ng-logo-img {
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 16px;
-    object-fit: contain;
-    display: inline-block;
-  }
-</style>
+    .ng-logo-img {
+      width: 48px !important;
+      height: 48px !important;
+      object-fit: contain !important;
+      display: inline-block !important;
+      border-radius: 12px;
+    }
+  </style>
 </head>
+
 <body class="saha saha-dark" id="top">
   <div class="bg-orbit"></div>
   <div class="bg-orbit bg-orbit-secondary"></div>
@@ -36,11 +35,7 @@
   <header class="ng-nav">
     <div class="ng-nav__logo">
       <a href="#top" class="ng-logo-link">
-        <img
-          src="shield.png"
-          alt="Network Guardian Shield"
-          class="ng-logo-img"
-        />
+        <img src="shield.png" alt="NG Shield" class="ng-logo-img" />
         <div class="ng-logo-text">
           <span class="ng-logo-title">Network Guardian</span>
           <span class="ng-logo-subtitle">Wi-Fi Trust Score</span>
@@ -65,18 +60,17 @@
     <!-- HERO SECTION -->
     <section class="ng-hero">
       <div class="ng-hero__copy">
-        <p class="eyebrow">PUBLIC WI-FI, FINALLY UNDERSTOOD</p>
+        <p class="eyebrow">PUBLIC WI-FI, REIMAGINED</p>
 
         <h1>
           Make Wi-Fi decisions with a
-          <span class="gradient-text">trust score</span> — not guesswork.
+          <span class="gradient-text">trust score</span>, not guesswork.
         </h1>
 
         <p class="ng-hero__subtitle">
           Network Guardian evaluates every Wi-Fi network’s
           <strong>security</strong>, <strong>stability</strong>, and
-          <strong>community reputation</strong> before users connect. A safer way
-          to roam — for individuals and distributed teams.
+          <strong>community reputation</strong> before users connect.
         </p>
 
         <div class="ng-hero__actions">
@@ -85,13 +79,13 @@
         </div>
 
         <div class="ng-hero__meta">
-          <span class="badge badge-gold">Privacy-first telemetry</span>
+          <span class="badge badge-gold">Privacy-first</span>
           <span class="badge badge-cyan">Real-time scoring</span>
           <span class="badge badge-purple">Built for remote teams</span>
         </div>
       </div>
 
-      <!-- SAHA-Style Demo Panel -->
+      <!-- Hero Side Panel -->
       <div class="ng-hero__panel">
         <div class="intent-surface">
           <div class="intent-surface__header">
@@ -106,11 +100,7 @@
           </div>
 
           <div class="intent-input">
-            <input
-              type="text"
-              placeholder="Or type your own"
-              aria-label="User-typed Wi-Fi query"
-            />
+            <input type="text" placeholder="Or type your own" />
             <button class="intent-send">↑</button>
           </div>
         </div>
@@ -132,7 +122,7 @@
               <div class="scan-icon">🔒</div>
               <div class="scan-copy">
                 <p class="scan-title">Security</p>
-                <p class="scan-subtitle">No MITM or DNS hijack patterns detected.</p>
+                <p class="scan-subtitle">No DNS hijack behavior detected.</p>
                 <p class="scan-meta">91% confidence</p>
               </div>
               <div class="scan-status">
@@ -145,9 +135,7 @@
               <div class="scan-icon">📡</div>
               <div class="scan-copy">
                 <p class="scan-title">Stability</p>
-                <p class="scan-subtitle">
-                  Evaluating jitter and loss vs video-call thresholds.
-                </p>
+                <p class="scan-subtitle">Evaluating jitter & loss levels…</p>
                 <p class="scan-meta">76% confidence</p>
               </div>
               <div class="scan-status">
@@ -174,12 +162,14 @@
               <span>AI CONFIDENCE</span>
               <span class="confidence-badge">Steady</span>
             </div>
+
             <div class="confidence-bar__track">
               <div class="confidence-bar__fill"></div>
               <div class="confidence-bar__shimmer"></div>
             </div>
+
             <p class="confidence-bar__note">
-              Explained through security, stability, and community signals.
+              Explained using security, stability, and community signals.
             </p>
           </div>
         </div>
@@ -189,33 +179,31 @@
     <!-- Problem -->
     <section id="problem" class="ng-section">
       <div class="ng-section__header">
-        <h2>Public Wi-Fi is the biggest unprotected attack surface.</h2>
+        <h2>The hidden risk of public Wi-Fi.</h2>
         <p>
-          VPNs encrypt after you connect — they don’t tell you whether you should
-          trust the network at all.
+          VPNs encrypt traffic after you connect — they don't tell you whether
+          the network itself should be trusted.
         </p>
       </div>
 
       <div class="ng-grid ng-grid--2">
         <div class="ng-card ng-card--list">
-          <h3 class="ng-card__title">What people worry about</h3>
+          <h3 class="ng-card__title">Common concerns</h3>
           <ul>
-            <li>Is this Wi-Fi a spoofed SSID (Evil Twin)?</li>
+            <li>Is this SSID a spoofed Evil Twin?</li>
             <li>Is the router compromised or injecting ads?</li>
-            <li>Will this network drop my meeting?</li>
-            <li>Has this BSSID been flagged as malicious?</li>
-            <li>Is “Free Airport Wi-Fi” actually the airport?</li>
+            <li>Will this network drop my video call?</li>
+            <li>Is this BSSID flagged globally?</li>
           </ul>
         </div>
 
         <div class="ng-card">
-          <h3 class="ng-card__title">What Network Guardian adds</h3>
+          <h3 class="ng-card__title">What we do</h3>
           <ul>
-            <li>On-device diagnostics & packet telemetry</li>
-            <li>Stability signals: loss, jitter, latency</li>
-            <li>Global BSSID reputation models</li>
-            <li>Privacy-preserving community reporting</li>
-            <li>Safe / Caution / Unsafe explanations</li>
+            <li>On-device diagnostics</li>
+            <li>Jitter, loss & latency scoring</li>
+            <li>Global BSSID reputation</li>
+            <li>Privacy-preserving telemetry</li>
           </ul>
         </div>
       </div>
@@ -225,31 +213,26 @@
     <section id="trust-score" class="ng-section">
       <div class="ng-section__header">
         <h2>The Wi-Fi Trust Score.</h2>
-        <p>A single explainable score from 0–100, mapped to Safe / Caution / Unsafe bands.</p>
+        <p>A simple 0–100 score mapped to Safe / Caution / Unsafe.</p>
       </div>
 
       <div class="ng-grid ng-grid--3">
         <div class="ng-card ng-card--score">
-          <p class="score-label">Score example</p>
+          <p class="score-label">Example</p>
           <p class="score-value">87</p>
           <p class="score-pill score-pill--safe">Safe</p>
-          <p class="score-desc">
-            Strong integrity, consistent stability, and diverse positive signals.
-          </p>
         </div>
 
         <div class="ng-card ng-card--score">
-          <p class="score-label">Caution range</p>
+          <p class="score-label">Caution</p>
           <p class="score-range">45–74</p>
           <p class="score-pill score-pill--caution">Caution</p>
-          <p class="score-desc">Unstable, noisy, or incomplete reputation data.</p>
         </div>
 
         <div class="ng-card ng-card--score">
-          <p class="score-label">Unsafe range</p>
+          <p class="score-label">Unsafe</p>
           <p class="score-range">0–44</p>
           <p class="score-pill score-pill--unsafe">Unsafe</p>
-          <p class="score-desc">Known malicious behavior or spoofed identity patterns.</p>
         </div>
       </div>
     </section>
@@ -257,23 +240,21 @@
     <!-- Pillars -->
     <section id="pillars" class="ng-section">
       <div class="ng-section__header">
-        <h2>How the Trust Score works.</h2>
+        <h2>How it works.</h2>
       </div>
 
       <div class="ng-grid ng-grid--3">
         <div class="ng-card ng-card--pillar">
           <h3>1. Security</h3>
-          <p>Detect spoofing, hijacks, injection paths, and suspicious metadata.</p>
+          <p>Detects spoofing, hijacks, and DNS manipulation patterns.</p>
         </div>
         <div class="ng-card ng-card--pillar">
           <h3>2. Stability</h3>
-          <p>
-            Call-readiness signals derived from latency, jitter, loss, and success ratios.
-          </p>
+          <p>Evaluates latency, jitter, loss and video-call readiness.</p>
         </div>
         <div class="ng-card ng-card--pillar">
           <h3>3. Community</h3>
-          <p>Global reputation graph blending trust across time and ASN diversity.</p>
+          <p>Builds a global BSSID trust graph from anonymous data.</p>
         </div>
       </div>
     </section>
@@ -284,8 +265,8 @@
         <div class="ng-cta-copy">
           <h2>Want your product to feel Wi-Fi-aware?</h2>
           <p>
-            We’re partnering with remote-first teams, travel apps, and security
-            tools to shape real-time Wi-Fi trust experiences.
+            We’re partnering with remote-first teams, travel platforms, and
+            security tools.
           </p>
         </div>
 
@@ -293,9 +274,8 @@
           <a
             href="mailto:hello@networkguardian.app?subject=Pilot%20Interest"
             class="btn btn-primary btn-lg"
-          >
-            Start a Pilot Conversation
-          </a>
+          >Start a Pilot Conversation</a>
+
           <a href="#newsletter" class="btn btn-outline btn-lg">
             Keep Me Updated
           </a>
@@ -308,16 +288,16 @@
       <div class="ng-cta-card">
         <div class="ng-cta-copy">
           <h2>Stay informed.</h2>
-          <p>
-            Get short, high-signal updates as we roll out features and partner pilots.
-          </p>
+          <p>Short, high-signal updates as we roll out features.</p>
 
-          <!-- Buttondown form -->
+          <!-- Buttondown Embed Form (CSRF-safe) -->
           <form
             id="ng-newsletter-form"
             class="ng-newsletter-form"
-            action="https://buttondown.email/networkguardian"
+            action="https://buttondown.email/api/emails/embed-subscribe/networkguardian"
             method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.email/networkguardian', 'popupwindow')"
           >
             <input
               type="email"
@@ -325,6 +305,7 @@
               placeholder="you@company.com"
               required
             />
+            <input type="hidden" name="embed" value="1" />
             <button type="submit" class="btn btn-primary">Keep me posted</button>
           </form>
 
@@ -350,6 +331,7 @@
     </div>
   </div>
 
+  <!-- Toast Logic -->
   <script>
     const form = document.getElementById("ng-newsletter-form");
     const toast = document.getElementById("ng-toast");
@@ -358,7 +340,7 @@
       setTimeout(() => {
         toast.classList.add("show");
         setTimeout(() => toast.classList.remove("show"), 4000);
-      }, 800);
+      }, 700);
     });
   </script>
 </body>
