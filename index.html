@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Network Guardian – Wi-Fi Trust Score for the Real World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Network Guardian introduces the world's first Wi-Fi Trust Score – real-time security, stability, and community reputation for any network."
+  />
+
+  <!-- SAHA Typography: Space Grotesk + Inter Tight + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Space+Mono&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="saha saha-dark">
+  <div class="bg-orbit"></div>
+  <div class="bg-orbit bg-orbit-secondary"></div>
+
+  <!-- Top nav -->
+  <header class="ng-nav">
+    <div class="ng-nav__logo">
+      <div class="ng-logo-badge">
+        <span class="ng-logo-orb"></span>
+      </div>
+      <div class="ng-logo-text">
+        <span class="ng-logo-title">Network Guardian</span>
+        <span class="ng-logo-subtitle">Powered by SAHA</span>
+      </div>
+    </div>
+
+    <nav class="ng-nav__links">
+      <a href="#problem">Problem</a>
+      <a href="#trust-score">Wi-Fi Trust Score</a>
+      <a href="#pillars">Scoring Pillars</a>
+      <a href="#api">API</a>
+      <a href="#stability">Stability</a>
+    </nav>
+
+    <div class="ng-nav__cta">
+      <a href="#api" class="btn btn-outline">View API</a>
+      <a href="#get-started" class="btn btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero / Intent Surface -->
+  <main class="ng-main">
+    <section class="ng-hero">
+      <div class="ng-hero__copy">
+        <p class="eyebrow">PUBLIC WI-FI, FINALLY DEFENDED</p>
+        <h1>
+          The world’s first
+          <span class="gradient-text">Wi-Fi Trust Score</span>
+        </h1>
+        <p class="ng-hero__subtitle">
+          Network Guardian sits <strong>before</strong> your VPN and evaluates every network’s
+          <span class="accent">security</span>,
+          <span class="accent">stability</span>, and
+          <span class="accent">community reputation</span> —
+          so users know if a Wi-Fi is <em>Safe</em>, <em>Caution</em>, or <em>Unsafe</em> before they connect.
+        </p>
+
+        <div class="ng-hero__actions">
+          <a href="#get-started" class="btn btn-primary">Integrate in your app</a>
+          <a href="#api" class="btn btn-ghost">Explore FastAPI backend</a>
+        </div>
+
+        <div class="ng-hero__meta">
+          <span class="badge badge-gold">Telemetry-driven</span>
+          <span class="badge badge-cyan">Privacy-preserving</span>
+          <span class="badge badge-purple">Flutter + FastAPI + Postgres</span>
+        </div>
+      </div>
+
+      <!-- SAHA-inspired UI preview -->
+      <div class="ng-hero__panel">
+        <div class="intent-surface">
+          <div class="intent-surface__header">
+            <p class="intent-title">What do you want to check?</p>
+            <p class="intent-subtitle">Suggested intents</p>
+          </div>
+
+          <div class="intent-chips">
+            <button class="chip">Is this coffee shop Wi-Fi safe?</button>
+            <button class="chip">Will this network handle video calls?</button>
+            <button class="chip">Is this SSID a spoofed hotspot?</button>
+          </div>
+
+          <div class="intent-input">
+            <input
+              type="text"
+              placeholder="Or type your own intent"
+              aria-label="Freeform Wi-Fi intent"
+            />
+            <button class="intent-send" aria-label="Send intent">↑</button>
+          </div>
+        </div>
+
+        <div class="processing-stack">
+          <div class="processing-card">
+            <div class="processing-spinner">
+              <div class="processing-spinner__inner"></div>
+            </div>
+            <div class="processing-copy">
+              <p class="processing-label">Analyzing Wi-Fi: Cafe-Guest-5G</p>
+              <p class="processing-phase">Refining together…</p>
+              <p class="processing-confidence">Confidence 82%</p>
+            </div>
+          </div>
+
+          <div class="scan-items">
+            <div class="scan-item scan-item--complete">
+              <div class="scan-icon">🔒</div>
+              <div class="scan-copy">
+                <p class="scan-title">Security</p>
+                <p class="scan-subtitle">No obvious MITM, DNS hijack, or ad injection patterns.</p>
+                <p class="scan-meta">91% confidence</p>
+              </div>
+              <div class="scan-status">
+                <span class="status-pill status-pill--good">Safe</span>
+                <span class="status-duration">238ms</span>
+              </div>
+            </div>
+
+            <div class="scan-item scan-item--processing">
+              <div class="scan-icon">📡</div>
+              <div class="scan-copy">
+                <p class="scan-title">Stability</p>
+                <p class="scan-subtitle">Evaluating latency / jitter vs. video-call thresholds.</p>
+                <p class="scan-meta">76% confidence</p>
+              </div>
+              <div class="scan-status">
+                <span class="status-pill status-pill--warn">Processing</span>
+                <span class="status-duration">1.1s</span>
+              </div>
+            </div>
+
+            <div class="scan-item scan-item--pending">
+              <div class="scan-icon">🌍</div>
+              <div class="scan-copy">
+                <p class="scan-title">Community</p>
+                <p class="scan-subtitle">Blending trust across ASN, BSSID, and local reports.</p>
+                <p class="scan-meta">Pending fresh signals</p>
+              </div>
+              <div class="scan-status">
+                <span class="status-pill status-pill--pending">Queued</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="confidence-bar">
+            <div class="confidence-bar__label">
+              <span>AI CONFIDENCE</span>
+              <span class="confidence-badge">Celebrating</span>
+            </div>
+            <div class="confidence-bar__track">
+              <div class="confidence-bar__fill"></div>
+              <div class="confidence-bar__shimmer"></div>
+            </div>
+            <p class="confidence-bar__note">
+              Scoring based on security, stability, and community telemetry over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section id="problem" class="ng-section">
+      <div class="ng-section__header">
+        <h2>Wi-Fi is the largest unprotected attack surface in everyday life.</h2>
+        <p>
+          VPNs only encrypt traffic <strong>after</strong> you connect. Today, users have no trusted way to answer:
+        </p>
+      </div>
+
+      <div class="ng-grid ng-grid--2">
+        <div class="ng-card ng-card--list">
+          <h3 class="ng-card__title">The questions users can’t answer</h3>
+          <ul>
+            <li>Is this Wi-Fi safe, or a spoofed SSID (Evil Twin)?</li>
+            <li>Is the router compromised or injecting ads?</li>
+            <li>Will this network drop my video call halfway through?</li>
+            <li>Has this SSID been reported as malicious globally?</li>
+            <li>Is this “Free Airport Wi-Fi” really operated by the airport?</li>
+          </ul>
+        </div>
+
+        <div class="ng-card">
+          <h3 class="ng-card__title">Network Guardian’s answer</h3>
+          <p>
+            Network Guardian builds a <strong>Wi-Fi Reputation Graph</strong> by combining:
+          </p>
+          <ul>
+            <li>On-device diagnostics and telemetry packets</li>
+            <li>ASN and router metadata (operator_name)</li>
+            <li>Stability metrics: success ratio, latency, jitter, loss</li>
+            <li>Crowdsourced trust indicators from the community</li>
+            <li>Global BSSID reputation over time</li>
+          </ul>
+          <p class="ng-card__footer">
+            The result: a simple, explainable Wi-Fi Trust Score (0–100) that any user can understand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wi-Fi Trust Score -->
+    <section id="trust-score" class="ng-section">
+      <div class="ng-section__header">
+        <h2>Wi-Fi Trust Score: 0–100, explained in human language.</h2>
+        <p>
+          The backend FastAPI service ingests anonymized reports from your Flutter client, recomputes
+          <strong>network_reputation</strong> per BSSID, and exposes simple endpoints your app can consume.
+        </p>
+      </div>
+
+      <div class="ng-grid ng-grid--3">
+        <div class="ng-card ng-card--score">
+          <p class="score-label">Example score</p>
+          <p class="score-value">87</p>
+          <p class="score-pill score-pill--safe">Safe</p>
+          <p class="score-desc">
+            Strong security posture, low packet loss, stable latency and jitter. Backed by diverse community reports.
+          </p>
+        </div>
+
+        <div class="ng-card ng-card--score">
+          <p class="score-label">Caution band</p>
+          <p class="score-range">45 – 74</p>
+          <p class="score-pill score-pill--caution">Caution</p>
+          <p class="score-desc">
+            Inconsistent stability, limited reputation history, or suspicious routing behavior. Good for browsing, not for
+            sensitive work.
+          </p>
+        </div>
+
+        <div class="ng-card ng-card--score">
+          <p class="score-label">Unsafe band</p>
+          <p class="score-range">0 – 44</p>
+          <p class="score-pill score-pill--unsafe">Unsafe</p>
+          <p class="score-desc">
+            High risk of MITM, hijacked DNS, or known malicious BSSID. Recommend auto-blocking or forcing VPN-only mode.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scoring pillars -->
+    <section id="pillars" class="ng-section">
+      <div class="ng-section__header">
+        <h2>The three pillars of Network Guardian scoring.</h2>
+        <p>
+          Scoring logic is covered by tests (Safe / Caution / Unsafe thresholds) and backed by Postgres tables:
+          <code>wifi_reports</code>, <code>network_reputation</code>, and <code>telemetry_metrics</code>.
+        </p>
+      </div>
+
+      <div class="ng-grid ng-grid--3">
+        <article class="ng-card ng-card--pillar">
+          <h3>1. Security</h3>
+          <p>
+            Spots spoofed SSIDs, malicious gateways, and obvious MITM / DNS hijack patterns before a user trusts the network.
+          </p>
+          <ul>
+            <li>SSID/BSSID integrity checks</li>
+            <li>Route path / ASN sanity</li>
+            <li>Heuristics for captive portals &amp; injection</li>
+          </ul>
+        </article>
+
+        <article class="ng-card ng-card--pillar">
+          <h3>2. Stability</h3>
+          <p>
+            Evaluates success ratio, latency, jitter, and loss to tell users whether the network can handle real work.
+          </p>
+          <ul>
+            <li>Telemetry event ingestion via <code>/report</code></li>
+            <li>Percentiles served via <code>/stats/stability</code></li>
+            <li>Future: region &amp; plan-aware stability profiles</li>
+          </ul>
+        </article>
+
+        <article class="ng-card ng-card--pillar">
+          <h3>3. Community</h3>
+          <p>
+            Aggregates crowdsourced trust over time into a social-graph-style reputation for every BSSID worldwide.
+          </p>
+          <ul>
+            <li>Global BSSID reputation graph</li>
+            <li>Community weighted scores (EMAs post-MVP)</li>
+            <li>Operator &amp; location-aware patterns</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- API surface -->
+    <section id="api" class="ng-section ng-section--dense">
+      <div class="ng-section__header">
+        <h2>FastAPI backend: clean, opinionated, and ready for production.</h2>
+        <p>
+          Deployed as a containerized FastAPI service behind a load balancer. Uses PostgreSQL + SQLAlchemy 2.x and a
+          minimal, test-driven scoring core.
+        </p>
+      </div>
+
+      <div class="ng-card ng-card--api">
+        <header class="ng-card__header">
+          <h3>Core endpoints</h3>
+          <p>All responses are JSON. OpenAPI docs are exposed at <code>/docs</code>.</p>
+        </header>
+
+        <div class="api-table">
+          <div class="api-row api-row--header">
+            <span>Method</span>
+            <span>Endpoint</span>
+            <span>Description</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/health</code></span>
+            <span>Liveness probe used by orchestration and uptime checks.</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/config</code></span>
+            <span>Returns community weights, scoring flags, and feature switches.</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/public-ip</code></span>
+            <span>Tags reports with public IP / ASN / operator name for reputation modeling.</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--post">POST</span>
+            <span><code>/report</code></span>
+            <span>
+              Ingests a Wi-Fi scan payload, persists it to <code>wifi_reports</code>, recomputes
+              <code>network_reputation</code>, and returns the updated score.
+            </span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/report/{id}</code></span>
+            <span>Fetches a single stored report for debugging and observability.</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/network/{bssid}</code></span>
+            <span>Returns the current reputation and metadata for a single BSSID.</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/networks</code></span>
+            <span>Provides a catalog of known networks with aggregated Trust Scores.</span>
+          </div>
+
+          <div class="api-row">
+            <span class="api-method api-method--get">GET</span>
+            <span><code>/stats/stability</code></span>
+            <span>Exposes latency / jitter / loss percentiles for stability analytics.</span>
+          </div>
+        </div>
+
+        <footer class="ng-card__footer ng-card__footer--api">
+          <p>
+            Tests cover the scoring logic, <code>/report</code> persistence, and <code>/network</code> / <code>/networks</code>
+            lookups — so you can ship with confidence.
+          </p>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Stability profiles -->
+    <section id="stability" class="ng-section">
+      <div class="ng-section__header">
+        <h2>Built for evolving stability profiles.</h2>
+        <p>
+          Today, stability buckets and weights are env-driven. Tomorrow, they adapt to regions, ISPs, and plan tiers
+          (mobile vs. enterprise vs. home).
+        </p>
+      </div>
+
+      <div class="ng-grid ng-grid--2">
+        <div class="ng-card">
+          <h3 class="ng-card__title">What’s live in MVP</h3>
+          <ul>
+            <li>Latency / jitter / loss telemetry persisted via <code>telemetry_metrics</code></li>
+            <li>Env-driven thresholds and bucket definitions</li>
+            <li>Single, global stability profile for all networks</li>
+          </ul>
+        </div>
+
+        <div class="ng-card">
+          <h3 class="ng-card__title">Post-MVP roadmap</h3>
+          <ul>
+            <li>Region &amp; plan-aware stability profiles (mobile, home, enterprise)</li>
+            <li>Exposed <code>stability_profile</code> field for UI messaging (“mobile-friendly”, “enterprise strict”)</li>
+            <li>Richer EMAs &amp; diversity metrics for community signals</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get started -->
+    <section id="get-started" class="ng-section ng-section--cta">
+      <div class="ng-cta-card">
+        <div class="ng-cta-copy">
+          <h2>Drop Network Guardian into your stack in a weekend.</h2>
+          <p>
+            Spin up the FastAPI backend with Docker, point it at Postgres, and connect your Flutter client using the SAHA
+            design system for a luminous, trustworthy Wi-Fi experience.
+          </p>
+          <ol class="ng-cta-steps">
+            <li><strong>1.</strong> Clone the backend &amp; deploy on your cloud (ECS, EC2, or Kubernetes).</li>
+            <li><strong>2.</strong> Configure <code>DATABASE_URL</code> and run initial migrations.</li>
+            <li><strong>3.</strong> Wire your Flutter client to call <code>/report</code> and <code>/network/{bssid}</code>.</li>
+          </ol>
+        </div>
+        <div class="ng-cta-actions">
+          <a href="#api" class="btn btn-primary btn-lg">Open API surface</a>
+          <a href="#problem" class="btn btn-outline btn-lg">Review the full PRD</a>
+          <p class="ng-cta-footnote">
+            SAHA-styled components (intent surfaces, processing states, confidence indicators) are ready to plug into your
+            Flutter app.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / Buttondown CTA -->
+    <section id="newsletter" class="ng-section">
+      <div class="ng-cta-card">
+        <div class="ng-cta-copy">
+          <h2>Stay informed as Network Guardian evolves.</h2>
+          <p>
+            Get high-signal updates when we roll out new stability profiles, API changes, and launch milestones.
+            No noise, no spam.
+          </p>
+
+          <!-- Buttondown signup form -->
+          <!-- Replace YOUR_USERNAME with your actual Buttondown username -->
+          <form
+            id="ng-newsletter-form"
+            class="ng-newsletter-form"
+            action="https://buttondown.email/YOUR_USERNAME"
+            method="post"
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="you@company.com"
+              aria-label="Email address"
+            />
+            <button type="submit" class="btn btn-primary">
+              Keep me posted
+            </button>
+          </form>
+
+          <p class="ng-cta-footnote">
+            Powered by Buttondown. Unsubscribe anytime in a single click.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ng-footer">
+    <p>Network Guardian · Wi-Fi Trust Score platform</p>
+    <p class="ng-footer__meta">
+      Built with FastAPI · PostgreSQL · Flutter · SAHA design tokens
+    </p>
+  </footer>
+
+  <!-- SAHA-style toast for newsletter success -->
+  <div id="ng-toast" class="ng-toast" aria-live="polite" aria-atomic="true">
+    <div class="ng-toast__icon">✨</div>
+    <div class="ng-toast__content">
+      <p class="ng-toast__title">You’re in.</p>
+      <p class="ng-toast__body">Almost there — check your inbox to confirm your subscription.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('ng-newsletter-form');
+      const toast = document.getElementById('ng-toast');
+      let toastTimeout;
+
+      if (!form || !toast) return;
+
+      const nativeSubmit = HTMLFormElement.prototype.submit;
+
+      function showToast(message) {
+        const bodyEl = toast.querySelector('.ng-toast__body');
+        if (bodyEl && message) {
+          bodyEl.textContent = message;
+        }
+
+        toast.classList.add('ng-toast--visible');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('ng-toast--visible');
+        }, 4200);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const emailInput = form.querySelector('input[name="email"]');
+        if (!emailInput || !emailInput.value.trim()) return;
+
+        // Open Buttondown in a popup window and submit the form there
+        const popup = window.open(
+          form.action,
+          'buttondown_popup',
+          'scrollbars=yes,width=800,height=600'
+        );
+
+        form.target = 'buttondown_popup';
+        nativeSubmit.call(form);
+
+        // Optimistic toast
+        showToast('Almost there — check your inbox to confirm your subscription.');
+
+        // Clear input for a clean feel
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
