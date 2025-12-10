@@ -1,322 +1,289 @@
 /* ============================================================
-   NEX–SAHA v2.1 — EXTENDED CSS FOR NEW SECTIONS & HYBRID SYSTEM
-   Applies to: Why NG, Differentiation, AI, Roadmap, Summary
+   NETWORK GUARDIAN — TS1 SCANNER MODE (VERSION A)
+   SAHA × NEXUS HYBRID THEME — DEC 2025
    ============================================================ */
 
-/* ---------------------------------------------
-   SECTION HALOS — Soft cyan/purple ambient glow
-   --------------------------------------------- */
+/* ------------------------------------------------------------
+   1. CORE TOKEN SET
+------------------------------------------------------------- */
 
-.ng-section {
-  position: relative;
-  padding-top: var(--saha-spacing-xxl);
+:root {
+  --saha-cyan: #00e5ff;
+  --saha-cyan-deep: #00b8d4;
+  --saha-purple: #7c3aed;
+  --saha-teal: #14b8a6;
+  --saha-coral: #ff4757;
+  --saha-gold: #f59e0b;
+  --saha-silver: #a1a5b4;
+
+  --saha-navy-900: #020617;
+  --saha-navy-800: #0a1428;
+  --saha-navy-700: #0e1b38;
+  --saha-navy-600: #121f42;
+
+  --saha-white: #f8fafc;
+  --saha-frost: #cbd5e1;
+
+  --gap-xs: 4px;
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --gap-xl: 32px;
+  --gap-xxl: 48px;
+
+  --radius-card: 12px;
+  --radius-container: 24px;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.26);
+  --shadow-cyan: 0 0 18px rgba(0, 229, 255, 0.28);
+  --shadow-deep: 0 14px 30px rgba(0, 229, 255, 0.22);
+
+  /* Gradients */
+  --grad-nebula:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0, 184, 212, 0.22), transparent 55%),
+    linear-gradient(160deg, #020617 0%, #040b18 40%, #081326 100%);
+
+  --grad-luminous: linear-gradient(135deg, var(--saha-cyan), var(--saha-cyan-deep));
+  --grad-symbiotic: linear-gradient(
+    115deg,
+    var(--saha-cyan),
+    var(--saha-purple),
+    var(--saha-teal)
+  );
 }
 
-.ng-section::before {
-  /* faint ambient nebula */
+/* ------------------------------------------------------------
+   2. BASE LAYOUT RESET
+------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--saha-navy-900);
+  font-family: "Inter Tight", system-ui, sans-serif;
+  color: var(--saha-white);
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------
+   3. B1 — GHOST SCANNER BACKGROUND
+------------------------------------------------------------- */
+
+body::before {
   content: "";
-  position: absolute;
-  inset: -20% -10%;
-  background: radial-gradient(
-    circle at 30% 10%,
-    rgba(0, 229, 255, 0.08),
-    transparent 60%
-  );
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 229, 255, 0.02),
+      rgba(0, 229, 255, 0.02) 1px,
+      transparent 2px
+    ),
+    radial-gradient(circle at 30% 15%, rgba(0, 229, 255, 0.10), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.08), transparent 45%);
   pointer-events: none;
   z-index: 0;
+  animation: scannerSweep 18s linear infinite;
 }
 
-/* ---------------------------------------------
-   SECTION HEADER ENHANCEMENTS
-   --------------------------------------------- */
-
-.ng-section__header h2 {
-  font-size: 26px;
-  letter-spacing: -0.02em;
-  font-family: "Space Grotesk", sans-serif;
-  background-image: var(--saha-gradient-symbiotic);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 12px;
-}
-
-.ng-section__header p {
-  max-width: 600px;
-  font-size: 15px;
-  color: rgba(226, 232, 240, 0.85);
-}
-
-/* ---------------------------------------------
-   NEW CARD VARIANTS — NEX-SAHA Hybrid Density
-   --------------------------------------------- */
-
-.ng-card--hybrid {
-  position: relative;
-  padding: 24px;
-  border-radius: var(--saha-radius-container);
-  background: rgba(15, 23, 42, 0.94);
-  border: 2px solid rgba(0, 229, 255, 0.18);
-  box-shadow: var(--saha-shadow-level1);
-  backdrop-filter: blur(6px);
-  transition: all 0.25s ease-out;
-}
-
-.ng-card--hybrid:hover {
-  border-color: var(--saha-luminous-cyan);
-  box-shadow: var(--saha-shadow-level2);
-  transform: translateY(-2px);
-}
-
-.ng-card--hybrid h3 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 16px;
-  margin: 0 0 10px;
-}
-
-.ng-card--hybrid p,
-.ng-card--hybrid li {
-  font-size: 14px;
-  color: rgba(226, 232, 240, 0.88);
-}
-
-/* ---------------------------------------------
-   DIFFERENTIATION LIST — Glow left border
-   --------------------------------------------- */
-
-.ng-card--differentiator {
-  padding-left: 20px;
-  border-left: 3px solid var(--saha-luminous-cyan);
-}
-
-.ng-card--differentiator:hover {
-  border-left-color: var(--saha-resonance-purple);
-}
-
-/* ---------------------------------------------
-   AI SECTION — Metrics Blocks
-   --------------------------------------------- */
-
-.ai-metric-block {
-  background: rgba(15, 23, 42, 0.92);
-  border-radius: var(--saha-radius-card);
-  padding: 18px 20px;
-  border: 1.5px solid rgba(0, 229, 255, 0.25);
-  margin-bottom: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.ai-metric-block::before {
-  /* faint cyan shimmer */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(0, 229, 255, 0.13),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-}
-
-.ai-metric-block:hover::before {
-  opacity: 1;
-}
-
-.ai-metric-block h4 {
-  margin: 0 0 8px;
-  font-size: 15px;
-  font-family: "Space Grotesk", sans-serif;
-}
-
-/* ---------------------------------------------
-   ROADMAP CARDS — Quarter Labels + Glow Tokens
-   --------------------------------------------- */
-
-.ng-roadmap-quarter {
-  padding: 24px 20px 20px;
-  border-radius: var(--saha-radius-container);
-  background: rgba(15, 23, 42, 0.88);
-  border: 2px solid rgba(124, 58, 237, 0.28);
-  box-shadow: var(--saha-shadow-level1);
-  transition: all 0.25s ease-out;
-}
-
-.ng-roadmap-quarter:hover {
-  border-color: var(--saha-resonance-purple);
-  box-shadow: var(--saha-shadow-level2);
-  transform: translateY(-3px);
-}
-
-.ng-roadmap-quarter h3 {
-  margin: 0 0 8px;
-  font-size: 17px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--saha-system-silver);
-}
-
-/* ---------------------------------------------
-   FINAL SUMMARY — Centered Hero Summary Block
-   --------------------------------------------- */
-
-.ng-summary-block {
-  margin-top: 40px;
-  padding: 28px 32px;
-  border-radius: var(--saha-radius-container);
-  text-align: center;
-  background: rgba(15, 23, 42, 0.94);
-  border: 2px solid rgba(0, 229, 255, 0.22);
-  box-shadow: var(--saha-shadow-level1);
-  backdrop-filter: blur(6px);
-}
-
-.ng-summary-block h2 {
-  margin: 0 0 10px;
-  font-size: 26px;
-  background-image: var(--saha-gradient-symbiotic);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.ng-summary-block p {
-  max-width: 680px;
-  margin: 0 auto;
-  font-size: 15px;
-  color: rgba(226, 232, 240, 0.88);
-  line-height: 1.55;
-}
-
-/* ---------------------------------------------
-   JOYFUL SLIDE — For new pillars & differentiators
-   --------------------------------------------- */
-
-@keyframes joyfulSlide {
+@keyframes scannerSweep {
   0% {
-    transform: translateY(14px);
-    opacity: 0;
+    opacity: 0.35;
+    transform: translateY(0);
   }
-  70% {
-    transform: translateY(-4px);
-    opacity: 1;
+  50% {
+    opacity: 0.55;
+    transform: translateY(-18px);
   }
   100% {
+    opacity: 0.35;
     transform: translateY(0);
   }
 }
 
-.joyful-slide {
-  animation: joyfulSlide 0.5s ease-out both;
+/* Floating ghost lines */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 229, 255, 0.06),
+    transparent
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  animation: ghostLines 11s ease-in-out infinite;
 }
 
-/* ---------------------------------------------
-   CELEBRATION (Success) — for completed items
-   --------------------------------------------- */
-
-@keyframes celebrationPop {
+@keyframes ghostLines {
   0% {
-    transform: scale(1.0);
-  }
-  30% {
-    transform: scale(1.15) rotate(5deg);
+    transform: translateX(-6%);
   }
   100% {
-    transform: scale(1);
+    transform: translateX(6%);
   }
 }
 
-.celebrate {
-  animation: celebrationPop 0.6s ease-out both;
-  border-color: var(--saha-kinetic-teal) !important;
-  box-shadow: 0 0 22px rgba(245, 158, 11, 0.45);
-}
+/* ------------------------------------------------------------
+   4. NAVIGATION
+------------------------------------------------------------- */
 
-/* ---------------------------------------------
-   NEW DOTTED ICON (GLOBAL 54px)
-   --------------------------------------------- */
-
-.ng-icon-dotted {
-  width: 54px;
-  height: 54px;
-  border-radius: 999px;
-  border: 2px dotted var(--saha-luminous-cyan);
+.ng-nav {
+  position: sticky;
+  top: 0;
   display: flex;
+  padding: 16px 22px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  background: rgba(0, 229, 255, 0.08);
-  box-shadow: 0 0 14px rgba(0, 229, 255, 0.28);
+  backdrop-filter: blur(14px);
+  background: rgba(2, 6, 23, 0.66);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+  z-index: 10;
 }
 
-/* ---------------------------------------------
-   INDICATOR TOKENS — Confidence, Status, Notes
-   --------------------------------------------- */
-
-.confidence-label {
-  font-family: "Space Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--saha-human-gold);
+/* Logo */
+.ng-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 2px solid rgba(0, 229, 255, 0.55);
+  box-shadow: var(--shadow-cyan);
 }
 
-.confidence-low {
-  color: var(--saha-plasma-coral);
-}
+/* ------------------------------------------------------------
+   5. HERO SECTION
+------------------------------------------------------------- */
 
-.confidence-mid {
-  color: var(--saha-system-silver);
-}
-
-.confidence-high {
-  color: var(--saha-human-gold);
-}
-
-/* ---------------------------------------------
-   PROGRESS BAR (8px hybrid)
-   --------------------------------------------- */
-
-.ng-progress {
-  height: 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: rgba(15, 23, 42, 0.9);
-  overflow: hidden;
+.ng-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+  z-index: 1;
   position: relative;
 }
 
-.ng-progress__fill {
-  height: 100%;
-  width: 0%;
-  background-image: var(--saha-gradient-luminous);
-  transition: width 0.4s ease-out;
+.ng-hero__copy h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 42px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
-.ng-progress__shimmer {
-  position: absolute;
-  inset: 0;
-  width: 22%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.7),
-    transparent
-  );
-  animation: shimmer 1.2s linear infinite;
+/* Gradient text */
+.gradient-text {
+  background: var(--grad-symbiotic);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-/* ---------------------------------------------
-   REDUCED MOTION BEHAVIOR
-   --------------------------------------------- */
+/* ------------------------------------------------------------
+   6. INTENT SURFACE
+------------------------------------------------------------- */
 
-@media (prefers-reduced-motion: reduce) {
-  .joyful-slide,
-  .celebrate {
-    animation: none !important;
+.intent-surface {
+  background: rgba(10, 20, 40, 0.85);
+  border-radius: var(--radius-container);
+  border: 1.5px solid rgba(0, 229, 255, 0.32);
+  padding: 20px;
+  position: relative;
+  box-shadow: var(--shadow-cyan);
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--saha-cyan);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+/* ------------------------------------------------------------
+   7. PROCESSING STACK (SCAN SIMULATION UI)
+------------------------------------------------------------- */
+
+.processing-stack {
+  padding: 18px;
+  border-radius: var(--radius-container);
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(0, 229, 255, 0.14);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Spinner override for scanner mode */
+.processing-spinner {
+  width: 52px;
+  height: 52px;
+  border: 2px dotted rgba(0, 229, 255, 0.8);
+  animation: pulseScanner 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseScanner {
+  0% { box-shadow: 0 0 10px rgba(0,229,255,0.25); }
+  50% { box-shadow: 0 0 22px rgba(0,229,255,0.45); }
+  100% { box-shadow: 0 0 10px rgba(0,229,255,0.25); }
+}
+
+/* ------------------------------------------------------------
+   8. GENERIC CARDS
+------------------------------------------------------------- */
+
+.ng-card {
+  border-radius: var(--radius-container);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(0, 229, 255, 0.08);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ============================================================
+   9. CTA
+============================================================ */
+
+.ng-cta-card {
+  background: rgba(10, 20, 40, 0.88);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  border-radius: var(--radius-container);
+  box-shadow: var(--shadow-deep);
+  padding: 26px;
+  margin-top: 48px;
+}
+
+/* ============================================================
+   10. FOOTER
+============================================================ */
+
+.ng-footer {
+  margin-top: 48px;
+  padding: 24px 20px;
+  border-top: 1px solid rgba(0, 229, 255, 0.15);
+  color: var(--saha-frost);
+  font-size: 12px;
+}
+
+/* ============================================================
+   11. RESPONSIVE BEHAVIOR
+============================================================ */
+
+@media (max-width: 900px) {
+  .ng-hero {
+    grid-template-columns: 1fr;
   }
-  .ng-progress__shimmer {
-    animation: none !important;
+}
+
+@media (max-width: 600px) {
+  .ng-nav {
+    padding: 12px 16px;
   }
 }
