@@ -1,458 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="saha saha-dark">
 <head>
   <meta charset="UTF-8" />
-  <title>Network Guardian – Pre-Connection Wi-Fi Safety Intelligence</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Guardian — Wi-Fi Trust Intelligence</title>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Force logo sizing -->
-  <style>
-    .ng-logo-img {
-      width: 48px !important;
-      height: 48px !important;
-      object-fit: contain !important;
-      display: inline-block !important;
-      border-radius: 12px;
-    }
-  </style>
 </head>
 
-<body class="saha saha-dark" id="top">
-  <div class="bg-orbit"></div>
-  <div class="bg-orbit bg-orbit-secondary"></div>
+<body>
 
-  <!-- Top Navigation -->
-  <header class="ng-nav">
+  <!-- ===========================
+       GHOST SCANNER BACKGROUND (TS1)
+       Subtle Apple-like effect
+   ============================ -->
+  <div class="scanner-bg">
+    <div class="scanner-blur-layer"></div>
+    <div class="scanner-vignette"></div>
+    <div class="scanner-sweep"></div>
+  </div>
+
+  <!-- ===========================
+       NAVBAR
+   ============================ -->
+  <nav class="ng-nav">
     <div class="ng-nav__logo">
-      <a href="#top" class="ng-logo-link">
-        <img src="shield.png" alt="NG Shield" class="ng-logo-img" />
+      <a class="ng-logo-link" href="#">
+        <div class="ng-logo-img"></div>
         <div class="ng-logo-text">
           <span class="ng-logo-title">Network Guardian</span>
-          <span class="ng-logo-subtitle">Wi-Fi Intelligence</span>
+          <span class="ng-logo-subtitle">Wi-Fi Trust Score</span>
         </div>
       </a>
     </div>
 
-    <nav class="ng-nav__links">
-      <a href="#why-ng">Why NG</a>
-      <a href="#differentiation">Differentiation</a>
-      <a href="#ai">AI</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#newsletter">Updates</a>
-    </nav>
+    <div class="ng-nav__links">
+      <a href="#features">Features</a>
+      <a href="#scoring">Scoring</a>
+      <a href="#tech">Technology</a>
+    </div>
 
     <div class="ng-nav__cta">
-      <a href="#get-started" class="btn btn-outline">Start Pilot</a>
-      <a href="#newsletter" class="btn btn-primary">Join Waitlist</a>
+      <button class="btn btn-outline">Download</button>
+      <button class="btn btn-primary">Get Pro</button>
     </div>
-  </header>
+  </nav>
 
+  <!-- ===========================
+       MAIN CONTENT WRAPPER
+   ============================ -->
   <main class="ng-main">
-    <!-- HERO SECTION -->
+
+    <!-- ===========================
+         HERO SECTION
+     ============================ -->
     <section class="ng-hero">
+
+      <!-- LEFT COPY -->
       <div class="ng-hero__copy">
-        <p class="eyebrow">THE NEW LAYER OF CONNECTIVITY</p>
+        <p class="eyebrow">REAL-TIME WI-FI SAFETY</p>
 
         <h1>
-          The world’s first
-          <span class="gradient-text">Pre-Connection Wi-Fi Safety Intelligence Layer.</span>
+          Meet the world’s first
+          <span class="gradient-text">Wi-Fi Trust Intelligence</span> engine.
         </h1>
 
         <p class="ng-hero__subtitle">
-          Network Guardian evaluates every network <strong>before you connect</strong> — detecting 
-          risks, instability, spoofing behavior, and global trust patterns that VPNs and OS 
-          indicators cannot see.
+          Network Guardian analyzes <strong>security, stability, and community trust</strong> to tell you whether a network is safe — before you connect.
         </p>
 
         <div class="ng-hero__actions">
-          <a href="#get-started" class="btn btn-primary">Talk to Us</a>
-          <a href="#newsletter" class="btn btn-ghost">Get product updates</a>
+          <button class="btn btn-primary btn-lg">Run Express Scan</button>
+          <button class="btn btn-outline btn-lg">View How It Works</button>
         </div>
 
         <div class="ng-hero__meta">
-          <span class="badge badge-gold">Pre-Connection Security</span>
-          <span class="badge badge-cyan">AI-Driven Anomaly Detection</span>
-          <span class="badge badge-purple">Global Reputation Graph</span>
+          <span class="badge badge-cyan">Crowdsourced Trust Graph</span>
+          <span class="badge badge-gold">AI-Powered Scoring</span>
         </div>
       </div>
 
-      <!-- Hero Side Panel -->
+      <!-- RIGHT — INTENT SURFACE UI -->
       <div class="ng-hero__panel">
         <div class="intent-surface">
           <div class="intent-surface__header">
-            <p class="intent-title">What do you want to check?</p>
-            <p class="intent-subtitle">Suggested intents</p>
+            <h3 class="intent-title">What would you like to check?</h3>
+            <p class="intent-subtitle">Network diagnostics · safety · performance</p>
           </div>
 
           <div class="intent-chips">
-            <button class="chip">Is this airport Wi-Fi safe?</button>
-            <button class="chip">Can this network support calls?</button>
-            <button class="chip">Is this hotspot actually legit?</button>
+            <div class="chip">Scan Network</div>
+            <div class="chip">Check Stability</div>
+            <div class="chip">Verify Security</div>
+            <div class="chip">Explain Score</div>
           </div>
 
           <div class="intent-input">
-            <input type="text" placeholder="Or type your own" />
-            <button class="intent-send">↑</button>
+            <input type="text" placeholder="Ask anything about this Wi-Fi…" />
+            <button class="intent-send">→</button>
           </div>
         </div>
 
+        <!-- PROCESSING STACK -->
         <div class="processing-stack">
           <div class="processing-card">
             <div class="processing-spinner">
               <div class="processing-spinner__inner"></div>
             </div>
             <div class="processing-copy">
-              <p class="processing-label">Analyzing Wi-Fi: Cafe-Guest-5G</p>
-              <p class="processing-phase">Thinking with you…</p>
-              <p class="processing-confidence">Confidence 82%</p>
+              <p class="processing-label">Analyzing network…</p>
+              <p class="processing-phase">Thinking with you</p>
+              <p class="processing-confidence">Confidence building…</p>
             </div>
           </div>
 
+          <!-- SCAN ITEMS -->
           <div class="scan-items">
-            <div class="scan-item scan-item--complete">
-              <div class="scan-icon">🔒</div>
+            <div class="scan-item">
+              <div class="scan-icon">✓</div>
               <div class="scan-copy">
-                <p class="scan-title">Security</p>
-                <p class="scan-subtitle">No DNS hijack behavior detected.</p>
-                <p class="scan-meta">91% confidence</p>
+                <p class="scan-title">DNS Resolution</p>
+                <p class="scan-subtitle">Resolved in 0.6s</p>
               </div>
               <div class="scan-status">
-                <span class="status-pill status-pill--good">Safe</span>
-                <span class="status-duration">238ms</span>
+                <div class="status-pill status-pill--good">good</div>
+                <span class="status-duration">0.6s</span>
               </div>
             </div>
 
-            <div class="scan-item scan-item--processing">
-              <div class="scan-icon">📡</div>
+            <div class="scan-item">
+              <div class="scan-icon">⟳</div>
               <div class="scan-copy">
-                <p class="scan-title">Stability</p>
-                <p class="scan-subtitle">Evaluating jitter & loss levels…</p>
-                <p class="scan-meta">76% confidence</p>
+                <p class="scan-title">TLS Handshake</p>
+                <p class="scan-subtitle">Verifying certificate chain…</p>
               </div>
               <div class="scan-status">
-                <span class="status-pill status-pill--warn">Processing</span>
-                <span class="status-duration">1.1s</span>
+                <div class="status-pill status-pill--pending">pending</div>
               </div>
             </div>
 
-            <div class="scan-item scan-item--pending">
-              <div class="scan-icon">🌍</div>
-              <div class="scan-copy">
-                <p class="scan-title">Community</p>
-                <p class="scan-subtitle">Checking global trust signals…</p>
-                <p class="scan-meta">Pending</p>
-              </div>
-              <div class="scan-status">
-                <span class="status-pill status-pill--pending">Queued</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="confidence-bar">
-            <div class="confidence-bar__label">
-              <span>AI CONFIDENCE</span>
-              <span class="confidence-badge">Steady</span>
-            </div>
-
-            <div class="confidence-bar__track">
-              <div class="confidence-bar__fill"></div>
-              <div class="confidence-bar__shimmer"></div>
-            </div>
-
-            <p class="confidence-bar__note">
-              Explained using security, stability, and community signals.
-            </p>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- WHY THIS MATTERS -->
-    <section id="why-ng" class="ng-section">
+    <!-- ===========================
+         FEATURES SECTION
+     ============================ -->
+    <section id="features" class="ng-section">
       <div class="ng-section__header">
-        <h2>Why this matters.</h2>
-        <p>Wi-Fi is the largest unprotected attack surface in everyday life — and no existing tool evaluates it before you connect.</p>
-      </div>
-
-      <div class="ng-grid ng-grid--2">
-        <div class="ng-card">
-          <h3 class="ng-card__title">The questions nobody can answer:</h3>
-          <ul>
-            <li>Is this Wi-Fi safe?</li>
-            <li>Has this network been compromised?</li>
-            <li>Is this AP spoofing a legitimate hotspot?</li>
-            <li>Will my call drop on this network?</li>
-            <li>Are others reporting problems here?</li>
-          </ul>
-        </div>
-
-        <div class="ng-card">
-          <h3 class="ng-card__title">The new category:</h3>
-          <p><strong>Pre-Connection Security Layer</strong></p>
-          <ul>
-            <li>Evaluates trust before the handshake</li>
-            <li>Builds a global Wi-Fi reputation graph</li>
-            <li>Detects instability before users feel it</li>
-            <li>Uses AI to guide safe decisions</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFFERENTIATION -->
-    <section id="differentiation" class="ng-section">
-      <div class="ng-section__header">
-        <h2>What makes Network Guardian impossible to copy.</h2>
+        <h2>Why Network Guardian?</h2>
+        <p>Three independent pillars give every network a reliable, explainable trust score.</p>
       </div>
 
       <div class="ng-grid ng-grid--3">
+
+        <!-- Security -->
         <div class="ng-card ng-card--pillar">
-          <h3>Multi-Scan Anomaly Detector</h3>
-          <p>Baselines each BSSID, detecting sudden drifts in latency, jitter, loss and stability — before users experience failures.</p>
-        </div>
-
-        <div class="ng-card ng-card--pillar">
-          <h3>Global Reputation Graph</h3>
-          <p>Every scan enriches our model of security, stability, and trust — creating a moat no competitor can recreate.</p>
-        </div>
-
-        <div class="ng-card ng-card--pillar">
-          <h3>Community Confidence Engine</h3>
-          <p>Diversity + recency modeling ensures reliable, noise-free trust signals that outperform legacy DNS/VPN heuristics.</p>
-        </div>
-
-        <div class="ng-card ng-card--pillar">
-          <h3>Predictive Risk Coach</h3>
-          <p>Reads anomalies, trends, telemetry freshness, and crowd reputation to guide users with contextual next steps.</p>
-        </div>
-
-        <div class="ng-card ng-card--pillar">
-          <h3>SAHA Design System</h3>
-          <p>A premium, futuristic UI that makes security feel intuitive and delightful — not technical or overwhelming.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI SECTION -->
-    <section id="ai" class="ng-section">
-      <div class="ng-section__header">
-        <h2>AI powering the next generation of Wi-Fi intelligence.</h2>
-      </div>
-
-      <div class="ng-grid ng-grid--2">
-        <div class="ng-card">
-          <h3>What AI does today</h3>
-          <ul>
-            <li>Flags instability using anomaly models (Z/MAD)</li>
-            <li>Evolves baselines per BSSID</li>
-            <li>Guides decisions via the Predictive Coach</li>
-            <li>Surfaces security incidents & global trust shifts</li>
-          </ul>
-        </div>
-
-        <div class="ng-card">
-          <h3>What’s coming next</h3>
-          <ul>
-            <li>Stability Prediction Model (ML v1)</li>
-            <li>Intent → Process → Refine AI assistant</li>
-            <li>Density Map with predictive surfacing</li>
-            <li>Rogue AP clustering & regional risks</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST SCORE -->
-    <section id="trust-score" class="ng-section">
-      <div class="ng-section__header">
-        <h2>The Wi-Fi Trust Score.</h2>
-        <p>A unified 0–100 score mapped to Safe / Caution / Unsafe.</p>
-      </div>
-
-      <div class="ng-grid ng-grid--3">
-        <div class="ng-card ng-card--score">
-          <p class="score-label">Example</p>
-          <p class="score-value">87</p>
-          <p class="score-pill score-pill--safe">Safe</p>
-        </div>
-
-        <div class="ng-card ng-card--score">
-          <p class="score-label">Caution</p>
-          <p class="score-range">45–74</p>
-          <p class="score-pill score-pill--caution">Caution</p>
-        </div>
-
-        <div class="ng-card ng-card--score">
-          <p class="score-label">Unsafe</p>
-          <p class="score-range">0–44</p>
-          <p class="score-pill score-pill--unsafe">Unsafe</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="pillars" class="ng-section">
-      <div class="ng-section__header">
-        <h2>How it works.</h2>
-      </div>
-
-      <div class="ng-grid ng-grid--3">
-        <div class="ng-card ng-card--pillar">
-          <h3>1. Security</h3>
-          <p>Detects spoofing, hijacks, and DNS manipulation patterns.</p>
-        </div>
-        <div class="ng-card ng-card--pillar">
-          <h3>2. Stability</h3>
-          <p>Evaluates latency, jitter, loss and video-call readiness.</p>
-        </div>
-        <div class="ng-card ng-card--pillar">
-          <h3>3. Community</h3>
-          <p>Builds a global BSSID trust graph from anonymous data.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROADMAP -->
-    <section id="roadmap" class="ng-section">
-      <div class="ng-section__header">
-        <h2>Roadmap: Building global Wi-Fi safety infrastructure.</h2>
-      </div>
-
-      <div class="ng-grid ng-grid--3">
-        <div class="ng-card ng-card--pillar">
-          <h3>Q1</h3>
-          <ul>
-            <li>Stability Predictor ML v1</li>
-            <li>Density Map (public + partner views)</li>
-            <li>Community EMA persistence</li>
-            <li>“Safe to Connect?” smart banner</li>
-          </ul>
-        </div>
-
-        <div class="ng-card ng-card--pillar">
-          <h3>Q2</h3>
-          <ul>
-            <li>AI assistant for contextual guidance</li>
-            <li>Partner SDK for VPNs</li>
-            <li>Rogue AP clustering model</li>
-            <li>Regional risk patterns</li>
-          </ul>
-        </div>
-
-        <div class="ng-card ng-card--pillar">
-          <h3>Q3</h3>
-          <ul>
-            <li>Enterprise portal</li>
-            <li>Router OEM partnerships</li>
-            <li>Travel platform integrations</li>
-            <li>Premium subscription launch</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="get-started" class="ng-section ng-section--cta">
-      <div class="ng-cta-card">
-        <div class="ng-cta-copy">
-          <h2>Want your product to feel Wi-Fi-aware?</h2>
+          <h3>Security Analysis</h3>
           <p>
-            We’re partnering with remote-first teams, VPNs, travel platforms, and security tools.
+            TLS fingerprinting, DNS hijack checks, proxy behavior detection, 
+            SSL stripping patterns and certificate chain validation.
+          </p>
+        </div>
+
+        <!-- Stability -->
+        <div class="ng-card ng-card--pillar">
+          <h3>Stability Intelligence</h3>
+          <p>
+            Multi-scan baselines, latency/jitter/loss analysis, anomaly drift detection, 
+            and predictive reliability for calls, work, and streaming.
+          </p>
+        </div>
+
+        <!-- Community -->
+        <div class="ng-card ng-card--pillar">
+          <h3>Crowdsourced Trust</h3>
+          <p>
+            Uses anonymized cross-device telemetry to evaluate volume, quality, freshness, 
+            diversity and confidence of a network’s real-world behavior.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         SCORING MODEL
+     ============================ -->
+    <section id="scoring" class="ng-section">
+      <div class="ng-section__header">
+        <h2>The Trust Score Model</h2>
+        <p>Every network is evaluated using a transparent, explainable scoring pipeline.</p>
+      </div>
+
+      <div class="ng-grid ng-grid--2">
+
+        <!-- Left — Score breakdown -->
+        <div class="ng-card ng-card--score">
+          <p class="score-label">Final Score</p>
+          <h3 class="score-value gradient-text">87 / 100</h3>
+          <p class="score-desc">
+            A composite of security, stability, and community signals. Updated continuously 
+            as more intent and scan data flows in.
+          </p>
+
+          <div style="margin-top: 18px;">
+            <div class="score-pill score-pill--safe">Safe</div>
+          </div>
+        </div>
+
+        <!-- Right — Score components -->
+        <div class="ng-card ng-card--list">
+          <h3>Components</h3>
+          <ul>
+            <li><strong>Security Score</strong> — TLS, DNS, MITM detection</li>
+            <li><strong>Stability Score</strong> — latency, jitter, loss, multi-scan baseline</li>
+            <li><strong>Community Score</strong> — real usage, diversity, EMAs, decay logic</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         TECHNOLOGY SECTION
+     ============================ -->
+    <section id="tech" class="ng-section">
+      <div class="ng-section__header">
+        <h2>How It Works</h2>
+        <p>
+          Network Guardian combines on-device diagnostics, a global trust graph, 
+          and intelligent AI scoring to power real-time network safety.
+        </p>
+      </div>
+
+      <div class="ng-grid ng-grid--3">
+
+        <div class="ng-card">
+          <h3>1. On-Device Diagnostics</h3>
+          <p>
+            Express & Detailed scans measure health signals without sending sensitive data
+            off the device.
+          </p>
+        </div>
+
+        <div class="ng-card">
+          <h3>2. Reputation Graph</h3>
+          <p>
+            Distributed telemetry builds per-BSSID baselines, anomaly markers, and 
+            long-term trust scores.
+          </p>
+        </div>
+
+        <div class="ng-card">
+          <h3>3. AI Trust Engine</h3>
+          <p>
+            A transparent scoring model blends diagnostics, community coverage, and
+            anomaly drift into an interpretable trust label.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===========================
+         CTA SECTION
+     ============================ -->
+    <section class="ng-section ng-section--cta">
+      <div class="ng-cta-card">
+
+        <div class="ng-cta-copy">
+          <h2>Ready to trust your Wi-Fi again?</h2>
+          <p>
+            Detect unsafe networks before you connect, understand their behavior,
+            and stay protected wherever you work or travel.
+          </p>
+
+          <div class="ng-newsletter-form">
+            <input type="email" placeholder="Your email address" />
+            <button class="btn btn-primary">Join Early Access</button>
+          </div>
+
+          <p class="ng-cta-footnote">
+            No spam. Only major feature announcements.
           </p>
         </div>
 
         <div class="ng-cta-actions">
-          <a
-            href="mailto:hello@networkguardian.app?subject=Pilot%20Interest"
-            class="btn btn-primary btn-lg"
-          >Start a Pilot Conversation</a>
-
-          <a href="#newsletter" class="btn btn-outline btn-lg">
-            Keep Me Updated
-          </a>
+          <button class="btn btn-primary btn-lg">Download App</button>
+          <button class="btn btn-outline btn-lg">Learn More</button>
         </div>
       </div>
     </section>
 
-    <!-- SUMMARY -->
-    <section id="summary" class="ng-section">
-      <div class="ng-section__header">
-        <h2>The trust platform for global connectivity.</h2>
-        <p>
-          Network Guardian measures what no one else can, predicts what others miss,
-          and builds a reputation graph that defines the future of Wi-Fi safety.
-        </p>
-      </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section id="newsletter" class="ng-section">
-      <div class="ng-cta-card">
-        <div class="ng-cta-copy">
-          <h2>Stay informed.</h2>
-          <p>Short, high-signal updates as we roll out features.</p>
-
-          <form
-            id="ng-newsletter-form"
-            class="ng-newsletter-form"
-            action="https://buttondown.email/api/emails/embed-subscribe/networkguardian"
-            method="post"
-            target="popupwindow"
-            onsubmit="window.open('https://buttondown.email/networkguardian', 'popupwindow')"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="you@company.com"
-              required
-            />
-            <input type="hidden" name="embed" value="1" />
-            <button type="submit" class="btn btn-primary">Keep me posted</button>
-          </form>
-
-          <p class="ng-cta-footnote">
-            Powered by Buttondown. Unsubscribe anytime.
-          </p>
-        </div>
-      </div>
-    </section>
   </main>
 
+  <!-- ===========================
+       FOOTER
+   ============================ -->
   <footer class="ng-footer">
-    <p>Network Guardian · Wi-Fi Intelligence</p>
-    <p class="ng-footer__meta">Built with privacy-preserving telemetry.</p>
+    <p>© 2025 RBX Labs. All rights reserved.</p>
+    <p class="ng-footer__meta">Network Guardian · Wi-Fi Trust Intelligence</p>
   </footer>
 
-  <!-- Toast -->
-  <div id="ng-toast" class="ng-toast" aria-live="polite">
-    <div class="ng-toast__icon">✨</div>
-    <div class="ng-toast__content">
-      <p class="ng-toast__title">You’re in.</p>
-      <p class="ng-toast__body">Check your inbox to confirm.</p>
-    </div>
-  </div>
-
-  <!-- Toast Logic -->
-  <script>
-    const form = document.getElementById("ng-newsletter-form");
-    const toast = document.getElementById("ng-toast");
-
-    form.addEventListener("submit", () => {
-      setTimeout(() => {
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 4000);
-      }, 700);
-    });
-  </script>
 </body>
 </html>
