@@ -1,98 +1,115 @@
-/* ===========================
-   NEX-SAHA CORE TOKENS
-   =========================== */
+/* =====================================================
+   NEX-SAHA v2.1 — NETWORK GUARDIAN (STATIC WEB)
+   ===================================================== */
+
+/* ---------- TOKENS ---------- */
 
 :root {
   --cyan: #00e5ff;
   --cyan-deep: #00b8d4;
   --purple: #7c3aed;
   --teal: #14b8a6;
-  --gold: #f59e0b;
-  --coral: #ff4757;
 
-  --navy: #0a1428;
-  --navy-elevated: #0e1b38;
-  --navy-interactive: #121f42;
+  --navy: #020617;
+  --panel: #0a1428;
   --white: #f8fafc;
-  --silver: #a1a5b4;
+  --muted: #94a3b8;
 
-  --gap-xs: 4px;
-  --gap-sm: 8px;
-  --gap-md: 16px;
-  --gap-lg: 24px;
-  --gap-xl: 32px;
-  --gap-xxl: 48px;
-  --gap-xxxl: 64px;
+  --xs: 4px;
+  --sm: 8px;
+  --md: 16px;
+  --lg: 24px;
+  --xl: 32px;
+  --xxl: 48px;
+  --xxxl: 64px;
 
-  --radius-card: 12px;
-  --radius-container: 24px;
-
+  --radius: 24px;
   --border-strong: 2px solid var(--cyan);
-
-  --shadow-glow: 0 0 28px rgba(0,229,255,.35);
+  --border-soft: 1px solid rgba(148,163,184,.35);
 }
 
-/* ===========================
-   BASE
-   =========================== */
+/* ---------- RESET ---------- */
 
 * { box-sizing: border-box; }
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------- BODY ---------- */
+
+body {
   font-family: "Inter Tight", system-ui, sans-serif;
   color: var(--white);
-  background: radial-gradient(circle at top left, rgba(124,58,237,.3), transparent 55%),
-              radial-gradient(circle at bottom right, rgba(0,184,212,.3), transparent 55%),
-              #020617;
+  background:
+    radial-gradient(circle at top left, rgba(124,58,237,.28), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0,184,212,.28), transparent 55%),
+    var(--navy);
 }
 
-/* ===========================
-   LAYOUT
-   =========================== */
-
-.ng-main {
-  max-width: 1120px;
-  margin: auto;
-  padding: var(--gap-xxxl) var(--gap-xl);
-}
-
-.ng-hero {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: var(--gap-xxl);
-}
-
-/* ===========================
-   NAV
-   =========================== */
+/* ---------- NAV ---------- */
 
 .ng-nav {
-  padding: var(--gap-lg) var(--gap-xl);
+  max-width: 1240px;
+  margin: auto;
+  padding: var(--lg) var(--xl);
 }
 
-.ng-logo-link {
+.ng-logo {
   display: flex;
-  gap: var(--gap-md);
-  text-decoration: none;
-  color: inherit;
+  gap: var(--md);
+  align-items: center;
 }
 
-.ng-logo-img {
+.ng-logo img {
   width: 48px;
   height: 48px;
   border-radius: 14px;
   border: var(--border-strong);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 24px rgba(0,229,255,.35);
 }
 
-/* ===========================
-   TYPOGRAPHY
-   =========================== */
+.ng-logo-title {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+}
+
+.ng-logo-subtitle {
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ---------- LAYOUT ---------- */
+
+.ng-main {
+  max-width: 1240px;
+  margin: auto;
+  padding: var(--xxxl) var(--xxl);
+}
+
+/* ---------- HERO ---------- */
+
+.ng-hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: var(--xxxl);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--muted);
+}
 
 h1 {
   font-family: "Space Grotesk";
   font-size: 40px;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--md);
 }
 
 .gradient-text {
@@ -101,108 +118,156 @@ h1 {
   color: transparent;
 }
 
-.mono {
-  font-family: "Space Mono";
+.ng-hero-subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: var(--lg);
 }
 
-/* ===========================
-   INTENT SURFACE
-   =========================== */
-
-.intent-surface {
-  padding: var(--gap-xl);
-  border-radius: var(--radius-container);
-  border: var(--border-strong);
-  background: var(--navy-elevated);
-}
-
-.intent-chips {
+.ng-hero-actions {
   display: flex;
-  gap: var(--gap-xl);
-  margin: var(--gap-xl) 0;
+  gap: var(--md);
 }
 
-.chip {
-  padding: 10px 14px;
+/* ---------- BUTTONS ---------- */
+
+.btn {
   border-radius: 999px;
-  border: 1px solid var(--cyan);
-  background: transparent;
-  color: var(--white);
+  padding: 10px 18px;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: transform .2s ease;
 }
 
-.chip:hover {
-  transform: scale(1.02);
+.btn-primary {
+  background: linear-gradient(135deg, var(--cyan), var(--cyan-deep));
+  color: #020617;
 }
 
-/* ===========================
-   PROCESSING
-   =========================== */
-
-.processing-spinner {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  border: 2px dotted var(--purple);
-  animation: spin 2s linear infinite;
+.btn-ghost {
+  border: var(--border-soft);
+  background: rgba(15,23,42,.7);
+  color: var(--white);
 }
 
-/* ===========================
-   SCAN ITEMS
-   =========================== */
+/* ---------- INTENT CARD ---------- */
 
-.scan-items {
+.intent-card {
+  background: rgba(15,23,42,.95);
+  border-radius: var(--radius);
+  border: var(--border-strong);
+  padding: var(--xl);
+}
+
+.intent-card ul {
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+/* ---------- DIAGRAM ---------- */
+
+.ng-diagram {
+  margin-top: var(--xxxl);
+}
+
+.diagram-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: var(--xxxl);
+  margin-top: var(--xxl);
+}
+
+.diagram-column {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
-  margin-top: var(--gap-xl);
-}
-
-.scan-item {
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  gap: var(--gap-lg);
-  animation: slide-in .5s ease;
-}
-
-.scan-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  border: 2px dotted var(--cyan);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(0,229,255,.15);
+  gap: var(--lg);
 }
 
-/* ===========================
-   CONFIDENCE BAR
-   =========================== */
-
-.confidence-bar__track {
-  height: 8px;
-  border-radius: 999px;
-  background: #111827;
-  overflow: hidden;
+.diagram-box {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--lg);
+  border-radius: var(--radius);
+  background: rgba(15,23,42,.92);
+  border: var(--border-soft);
+  text-align: center;
 }
 
-.confidence-bar__fill {
-  width: 78%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--cyan), var(--cyan-deep));
+.diagram-box.guardian {
+  border: var(--border-strong);
 }
 
-/* ===========================
-   ANIMATIONS
-   =========================== */
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.diagram-box ul {
+  text-align: left;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-@keyframes slide-in {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* ---------- FLOW ANIMATION ---------- */
+
+.flow-arrow {
+  width: 2px;
+  height: 36px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--cyan),
+    transparent
+  );
+  animation: flow 1.6s infinite ease-in-out;
+}
+
+@keyframes flow {
+  0% { opacity: .3; }
+  50% { opacity: 1; }
+  100% { opacity: .3; }
+}
+
+/* ---------- PULSES ---------- */
+
+.pulse {
+  animation: pulse 2.4s infinite ease-in-out;
+}
+
+.delayed-pulse {
+  animation: pulse 2.4s infinite ease-in-out;
+  animation-delay: 1.2s;
+  opacity: .7;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(0,229,255,0); }
+  50% { box-shadow: 0 0 28px rgba(0,229,255,.35); }
+  100% { box-shadow: 0 0 0 rgba(0,229,255,0); }
+}
+
+/* ---------- FOOTER ---------- */
+
+.ng-footer {
+  max-width: 1240px;
+  margin: var(--xxxl) auto var(--xxl);
+  padding: 0 var(--xxl);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .ng-hero,
+  .diagram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .ng-main {
+    padding: var(--xxl) var(--md);
+  }
 }
