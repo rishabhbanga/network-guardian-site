@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Network Guardian — Wi-Fi Trust Score</title>
+  <title>Network Guardian — Pre-Connection Wi-Fi Trust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Fonts -->
@@ -16,183 +16,130 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="saha saha-dark" id="top">
-  <div class="bg-orbit"></div>
-  <div class="bg-orbit bg-orbit-secondary"></div>
+<body>
 
   <!-- NAV -->
   <header class="ng-nav">
-    <a href="#top" class="ng-logo-link">
-      <img src="shield.png" alt="Network Guardian" class="ng-logo-img" />
-      <div class="ng-logo-text">
-        <span class="ng-logo-title">Network Guardian</span>
-        <span class="ng-logo-subtitle">Wi-Fi Trust Score</span>
+    <div class="ng-logo">
+      <img src="shield.png" alt="Network Guardian" />
+      <div>
+        <div class="ng-logo-title">Network Guardian</div>
+        <div class="ng-logo-subtitle">Pre-Connection Wi-Fi Trust</div>
       </div>
-    </a>
+    </div>
   </header>
 
   <main class="ng-main">
 
     <!-- HERO -->
     <section class="ng-hero">
-
-      <!-- LEFT COPY -->
-      <div class="ng-hero__copy">
+      <div>
         <p class="eyebrow">PUBLIC WI-FI, REIMAGINED</p>
-
         <h1>
-          Make Wi-Fi decisions with a
-          <span class="gradient-text">trust score</span>,
-          not guesswork.
+          Make Wi-Fi decisions
+          <span class="gradient-text">before you connect</span>,
+          not after damage is done.
         </h1>
-
-        <p class="ng-hero__subtitle">
-          We evaluate <strong>security</strong>, <strong>stability</strong>, and
-          <strong>community reputation</strong> — together with you — before you connect.
+        <p class="ng-hero-subtitle">
+          Public Wi-Fi is the world’s largest unprotected attack surface.
+          Network Guardian introduces the first
+          <strong>Pre-Connection Wi-Fi Trust Score (0–100)</strong> —
+          evaluating security, stability, and reputation before the handshake.
         </p>
 
-        <div class="ng-hero__actions">
-          <a href="#get-started" class="btn btn-primary">Talk to us</a>
-          <a href="#newsletter" class="btn btn-ghost">Get updates</a>
-        </div>
-
-        <div class="ng-hero__meta">
-          <span class="badge badge-cyan">Real-time scoring</span>
-          <span class="badge badge-gold">Privacy-first</span>
-          <span class="badge badge-purple">Built for remote teams</span>
+        <div class="ng-hero-actions">
+          <a class="btn btn-primary">Start a pilot conversation</a>
+          <a class="btn btn-ghost">Get product updates</a>
         </div>
       </div>
 
-      <!-- RIGHT PANEL -->
-      <div class="ng-hero__panel">
+      <div class="ng-hero-panel">
+        <div class="intent-card">
+          <h3>What we evaluate before connection</h3>
+          <ul>
+            <li>Rogue access point detection</li>
+            <li>DNS & TLS anomaly detection</li>
+            <li>Latency, jitter & packet-loss forecasting</li>
+            <li>Global Wi-Fi reputation graph</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <!-- INTENT SURFACE -->
-        <div class="intent-surface">
-          <p class="intent-title">What would you like to check?</p>
-          <p class="intent-subtitle">Choose an intent or type your own</p>
+    <!-- ANIMATED DIAGRAM -->
+    <section class="ng-diagram">
+      <h2>Pre-connection trust vs post-connection protection</h2>
+      <p class="diagram-subtitle">
+        Network Guardian evaluates Wi-Fi safety <strong>before</strong> your device connects.
+        VPNs only act <strong>after</strong> risk is already present.
+      </p>
 
-          <div class="intent-chips">
-            <button class="chip">Is this airport Wi-Fi safe?</button>
-            <button class="chip">Can this network support calls?</button>
-            <button class="chip">Is this hotspot legitimate?</button>
+      <div class="diagram-grid">
+
+        <!-- LEFT: PRE-CONNECTION -->
+        <div class="diagram-column">
+
+          <div class="diagram-box user">
+            User device
           </div>
 
-          <div class="intent-input">
-            <input type="text" placeholder="Type your intent…" />
-            <button class="intent-send">↑</button>
+          <div class="flow-arrow"></div>
+
+          <div class="diagram-box guardian pulse">
+            <strong>Network Guardian</strong>
+            <ul>
+              <li>Rogue AP detection</li>
+              <li>DNS / TLS anomalies</li>
+              <li>Stability forecasting</li>
+              <li>Reputation graph</li>
+            </ul>
+            <div class="trust-score">
+              Trust Score: <span>87 / Safe</span>
+            </div>
           </div>
+
+          <div class="flow-arrow"></div>
+
+          <div class="diagram-box wifi">
+            Public Wi-Fi
+          </div>
+
         </div>
 
-        <!-- PROCESSING -->
-        <div class="processing-stack">
-          <div class="processing-card">
-            <div class="processing-spinner"></div>
-            <div>
-              <p class="processing-label">
-                Thinking with you…
-              </p>
-              <p class="processing-meta">
-                Network: Cafe-Guest-5G · <span class="mono">82%</span> confidence
-              </p>
-            </div>
-          </div>
+        <!-- RIGHT: POST-CONNECTION -->
+        <div class="diagram-column secondary">
 
-          <!-- SCAN ITEMS -->
-          <div class="scan-items">
-
-            <div class="scan-item scan-item--complete">
-              <div class="scan-icon">🔒</div>
-              <div class="scan-copy">
-                <p class="scan-title">Security</p>
-                <p class="scan-subtitle">
-                  Excellent — no DNS hijack detected
-                  (<span class="mono">238ms</span>, <span class="mono">91%</span>)
-                </p>
-              </div>
-            </div>
-
-            <div class="scan-item scan-item--processing">
-              <div class="scan-icon">📡</div>
-              <div class="scan-copy">
-                <p class="scan-title">Stability</p>
-                <p class="scan-subtitle">
-                  Refining jitter & packet loss…
-                  (<span class="mono">76%</span>)
-                </p>
-              </div>
-            </div>
-
-            <div class="scan-item scan-item--pending">
-              <div class="scan-icon">🌍</div>
-              <div class="scan-copy">
-                <p class="scan-title">Community</p>
-                <p class="scan-subtitle">
-                  Queued — checking global trust signals
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- CONFIDENCE BAR -->
-          <div class="confidence-bar">
-            <div class="confidence-bar__label">
-              <span>AI CONFIDENCE</span>
-              <span class="confidence-badge">Steady</span>
-            </div>
-
-            <div class="confidence-bar__track">
-              <div class="confidence-bar__fill"></div>
-              <div class="confidence-bar__shimmer"></div>
-            </div>
-
-            <p class="confidence-bar__note">
-              Explained transparently using observable metrics.
+          <div class="diagram-box vpn delayed-pulse">
+            Traditional VPN
+            <p class="vpn-note">
+              Encrypts traffic <em>after</em> connection is established
             </p>
           </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- CTA -->
-    <section id="get-started" class="ng-section ng-section--cta">
-      <div class="ng-cta-card">
-        <div>
-          <h2>Want your product to feel Wi-Fi-aware?</h2>
-          <p>
-            We partner with travel, security, and remote-first platforms.
-          </p>
-        </div>
-
-        <div class="ng-cta-actions">
-          <a
-            href="mailto:hello@networkguardian.app"
-            class="btn btn-primary btn-lg"
-          >
-            Start a pilot conversation
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section id="newsletter" class="ng-section">
-      <div class="ng-cta-card">
-        <h2>Stay informed</h2>
-        <p>High-signal updates. No noise.</p>
-
-        <form
-          action="https://buttondown.email/api/emails/embed-subscribe/networkguardian"
-          method="post"
-          target="popupwindow"
-          onsubmit="window.open('https://buttondown.email/networkguardian')"
-          class="ng-newsletter-form"
-        >
-          <input type="email" name="email" placeholder="you@company.com" required />
-          <button type="submit" class="btn btn-primary">Join waitlist</button>
-        </form>
-      </div>
+    <!-- MID PAGE COPY -->
+    <section class="ng-problem">
+      <h2>Wi-Fi is a black box today.</h2>
+      <p>
+        When users join public Wi-Fi, they have no way to know whether the network
+        is legitimate, spoofed, unstable, or actively malicious.
+      </p>
+      <p>
+        VPNs help — but only after the connection is already established.
+      </p>
+      <p>
+        Network Guardian flips the model by evaluating networks before connection,
+        preventing man-in-the-middle attacks, DNS hijacks, call failures,
+        and credential theft.
+      </p>
+      <p class="closing">
+        It is the missing trust layer for the world’s Wi-Fi —
+        usable by consumers, VPNs, travel apps, telcos, and router OEMs.
+      </p>
     </section>
 
   </main>
@@ -200,5 +147,6 @@
   <footer class="ng-footer">
     Network Guardian · Built with privacy-preserving telemetry
   </footer>
+
 </body>
 </html>
